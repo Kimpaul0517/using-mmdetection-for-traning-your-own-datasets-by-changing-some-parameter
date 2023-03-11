@@ -850,4 +850,4 @@ python tools/test.py work_dir/mask_rcnn_r50_fpn_1x_coco.py work_dir/epoch_12.pth
 
 
 
-有关mmdetection的使用差不多到这里就够用了。如果需要更深入地了解与使用，请参考官方文档提供的[教程](https://mmdetection.readthedocs.io/zh_CN/stable/)。
+目前我只学习到如何使用自己的数据集在标准模型上进行预训练。需要注意的是，这里用到的模型都是在标准数据集上跑好的预训练权重文件。有关如何使用mmdetection修改标准模型来训练的内容，请参考官方文档提供的[教程](https://mmdetection.readthedocs.io/zh_CN/stable/)。
