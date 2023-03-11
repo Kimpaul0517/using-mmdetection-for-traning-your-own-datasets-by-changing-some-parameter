@@ -198,7 +198,7 @@ python demo/image_demo.py demo/demo.jpg configs/mask_rcnn/mask_rcnn_r50_fpn_1x_c
 
 
 
-利用官方提供的demo和训练好的权重文件，分割出的结果如下：![mask_rcnn_demo](.\02_mask_rcnn_demo.png)
+利用官方提供的demo和训练好的权重文件，分割出的结果如下：![mask_rcnn_demo](./pics/02_mask_rcnn_demo.png)
 
 如果代码能够成功运行，那么我们安装的工具包就能正常使用了。
 
@@ -229,7 +229,7 @@ conda activate mmlab
 python demo/video_demo.py demo/demo.mp4 configs/mask_rcnn/mask_rcnn_r50_fpn_1x_coco.py checkpoints/mask_rcnn_r50_fpn_1x_coco_20200205-d4b0c5d6.pth --show		# 注：展示是--show  保存检测后输出的文件是--output
 ```
 
-运行的结果如下：![test_video_demo](.\03_mask_rcnn_video_demo.png)
+运行的结果如下：![test_video_demo](./pics/03_mask_rcnn_video_demo.png)
 
 
 
@@ -352,7 +352,7 @@ labelme
 
 (2) 点击界面左侧的`opendir`，选择我们之前预处理好的图片文件夹：`E:\python\python_project\mogushujuji\image`
 
-(3) 打开文件夹之后，界面中间出现需要标注的第一张图片。此时`Create Polygons`变得高亮，点击`Create Polygons`之后，在图片上依次点击，框出需要标记的边界框。边界框首尾相连后会弹出命名标签的窗口，可以在弹出窗口中新建标签名，也可以在窗口下方选择已有的标签名。![labelme_use](.\04__labelme_use.png)
+(3) 打开文件夹之后，界面中间出现需要标注的第一张图片。此时`Create Polygons`变得高亮，点击`Create Polygons`之后，在图片上依次点击，框出需要标记的边界框。边界框首尾相连后会弹出命名标签的窗口，可以在弹出窗口中新建标签名，也可以在窗口下方选择已有的标签名。![labelme_use](./pics/04__labelme_use.png)
 
 **注：标记时如果产生遮挡，不要凭空想象其轮廓，在图片上有多少就圈多少出来**
 
@@ -362,7 +362,7 @@ labelme
 
 **注：**勾勒轮廓时，如果不小心点错了可以按ctrl+z退回上个勾勒点。如果需要删除或者移动边界框，点击Edit Polygons，再点击需要修改的框的中间，进行编辑操作。
 
-(6) 所有图片标记完成后，直接关闭labelme的窗口，打开图片目录`E:\python\python_project\mogushujuji\image`检查，会发现里面多了与图片**同样名称、同样数量**的、后缀为json的文件：![output_dir](.\05_labelme_output.png)
+(6) 所有图片标记完成后，直接关闭labelme的窗口，打开图片目录`E:\python\python_project\mogushujuji\image`检查，会发现里面多了与图片**同样名称、同样数量**的、后缀为json的文件：![output_dir](./pics/05_labelme_output.png)
 
 **注：**jpg与json文件名和数量都是一一对应的，如果缺少了，请重新回到labelme窗口，确保每张图片都已经打好了标签。
 
@@ -549,7 +549,7 @@ conda update scikit-learn
 
 然后pycharm内直接运行`labelme2coco.py`，如果这个脚本正常运行，在项目文件夹内会出现一个coco文件夹，格式如下：
 
-![coco_type](.\06_coco_out_type.png)
+![coco_type](./pics/06_coco_out_type.png)
 
 标准的coco格式的数据集文件夹中有3个子文件夹：1.annotations下面是两个json文件，分别是训练集和测试集打好的标签
 
@@ -661,7 +661,7 @@ python tools/train.py configs/mask_rcnn/mask_rcnn_r50_fpn_1x_coco.py --work-dir 
 
 ​	**注：**不用等待运行完成（因为参数没设置好，这时候一定会报错）。只要在自动生成的work_dir下，有这三个文件后，就可以按ctrl+c停止运行代码。
 
-![work_dir](.\07_work_dir_details.png)
+![work_dir](./pics/07_work_dir_details.png)
 
 (5) 修改在work_dir下生成的`mask_rcnn_r50_fpn_1x_coco.py`：
 
@@ -812,7 +812,7 @@ python tools/train.py work_dir/mask_rcnn_r50_fpn_1x_coco.py
 
 训练过程中的一些数据都是存在log.json和log两个文件里面的。我们点开其中json后缀的文件。可以看到大量字典存储在其中，阅读起来十分不方便。为了后续的展示，我们要将我们的运行结果做一个可视化处理。
 
-![log.json](.\08_log_json.png)
+![log.json](./pics/08_log_json.png)
 
 在根目录下的tools中，我们找到analysis_logs.py。这个脚本是官方提供的分析logs的一个工具。在命令行中运行下列代码：
 
@@ -822,7 +822,7 @@ python tools/analysis_tools/analyze_logs.py plot_curve work_dir/20230218_113715.
 
 **注：**--keys acc是我们在json文件中的索引，该脚本会自动索引其所对应的参数，并绘制到折线图中。也可以换成别的参数，比如loss_cls等。
 
-![plot_acc_curve](.\09_plot_acc_curve.png)
+![plot_acc_curve](./pics/09_plot_acc_curve.png)
 
 如果我们想在一个折线图中看到多个数值的变化趋势，比如loss值。那我们可以在命令行中输入：
 
@@ -830,7 +830,7 @@ python tools/analysis_tools/analyze_logs.py plot_curve work_dir/20230218_113715.
 python tools/analysis_tools/analyze_logs.py plot_curve work_dir/20230218_113715.log.json --keys loss_cls loss_bbox loss_mask
 ```
 
-![plot_of_loss](.\10_plot_loss.png)
+![plot_of_loss](./pics/10_plot_loss.png)
 
 如果需要保存输出的折线图，可以在后面加上--out out.pdf（也可以是png、jpg后缀的）：
 
@@ -846,7 +846,7 @@ python tools/analysis_tools/analyze_logs.py plot_curve work_dir/20230218_113715.
 python tools/test.py work_dir/mask_rcnn_r50_fpn_1x_coco.py work_dir/epoch_12.pth --show
 ```
 
-验证的图片默认是抽取我们之前放在测试集`data/coco/val2017`的图片，因为我的数据集很少，所以很早就过拟合了，准确率很高：![predict](.\11_predict_val.png)
+验证的图片默认是抽取我们之前放在测试集`data/coco/val2017`的图片，因为我的数据集很少，所以很早就过拟合了，准确率很高：![predict](./pics/11_predict_val.png)
 
 
 
