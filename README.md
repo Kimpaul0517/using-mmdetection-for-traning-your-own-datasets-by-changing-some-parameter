@@ -183,7 +183,7 @@ parser.add_argument(
 
 **注：**官方已经给我们准备好了所有的预训练文件。在configs文件夹中，你需要哪个模型，就可以点进该模型子文件夹中的readme.md，在里面找到并下载对应的权重文件。
 
-![model](.\01_mask_rcnn_test.png)
+![model](./pics/01_mask_rcnn_test.png)
 
 
 
