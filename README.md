@@ -274,7 +274,7 @@ conda install opencv=3.4.1
 
 ---
 
-**(2023/2/18)注：**我一直用的opencv都是3.4.1这个版本。但是现在走pip安装会报错（可能是pip不再支持安装opencv的老版本了，但是opencv在3pip install labelme -i https://mirrors.aliyun.com/pypi/simple/.8.x之后的绝大多数包都申请专利，目前已无法使用）。这里用conda还能安装，暂时先这样处理吧。
+**(2023/2/18)注：**我一直用的opencv都是3.4.1这个版本。但是现在走pip安装会报错（可能是pip不再支持安装opencv的老版本了，但是opencv在3.8.x之后的绝大多数包都申请专利，目前已无法使用）。这里用conda还能安装，暂时先这样处理吧。
 
 (4) 新建项目
 
